@@ -20,8 +20,8 @@ Briefly introduce your project. (About 150 words.)
 #### Project Framing
 
 #### Direct and Indirect Stakeholders
-**Policymakers** are direct stakeholders of the data we use and the results and visualizations we produce from it, as they may use this information to guide the decision they make about tax-rate legislation. 
-**Working class**
+**Policymakers** are direct stakeholders of the data we use and the results and visualizations we produce from it, as they may use this information to guide decisions related to income tax legislation at the federal and state level. Our data may prove useful to policymakers attempting to set state or federal tax brackets and tax rates for future years.
+**Working class** people are the indirect stakeholders of our data. 
 
 #### Human Values
 Values: Equity, 
