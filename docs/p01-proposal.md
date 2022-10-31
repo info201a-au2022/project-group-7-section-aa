@@ -1,7 +1,7 @@
 ## Tax Returns
 # Understanding the Tax Landscape in the US by Zip Code.
 #### Authors:
-Shivesh Ummat summat@uw.edu
+Shivesh Ummat summat@uw.edu, David Li laviddi@uw.edu
 
 #### INFO-201: Technical Foundations of Informatics - The Information School - University of Washington
 #### Autumn 2022
@@ -18,8 +18,14 @@ Briefly introduce your project. (About 150 words.)
 ### Problem Domain
 (Use short sub-sections to describe your topic and the setting (that is, the sociotechnical situation), including project framing, human values, direct and indirect stakeholders, possible harms and benefits. See the Design Brief, section B.3. Note: You must include three citations to related work (URLs to similar work, high quality articles from the popular press, reseach papers, etc. ). You may find it helpful to include a figure. (About 400 words.))
 #### Project Framing
+
 #### Direct and Indirect Stakeholders
+**Policymakers** are direct stakeholders of the data we use and the results and visualizations we produce from it, as they may use this information to guide the decision they make about tax-rate legislation. 
+**Working class**
+
 #### Human Values
+Values: Equity, 
+
 #### Potential Benefits and Harms
 
 ### Research Questions
