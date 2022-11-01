@@ -1,7 +1,7 @@
 ## Tax Returns
-# Understanding the Tax Landscape in the US by Zip Code.
+# Understanding the Tax Landscape in the US by Zip Code
 #### Authors:
-Shivesh Ummat summat@uw.edu, David Li laviddi@uw.edu, Ismail Ibrahim ishy206@uw.edu.
+Shivesh Ummat summat@uw.edu, David Li laviddi@uw.edu, Ismail Ibrahim ishy206@uw.edu
 
 #### INFO-201: Technical Foundations of Informatics - The Information School - University of Washington
 #### Autumn 2022
@@ -45,6 +45,9 @@ It may seem intuitive that states with lower personal income tax should have wea
 **Are taxes paid fairly or is the tax system abused by high earners?**
 There is much discourse in the media about tax write offs and ways to avoid paying taxes. Does this happen as often as it’s made out to? Or do high earners pay their taxes fairly and contribute as much as they should? An analysis of tax payments grouped by tax brackets will help us answer this question.
 
+**Are taxes paid fairly or is the tax system abused by high earners?**
+There is much discourse in the media about tax write offs and ways to avoid paying taxes. Does this happen as often as it’s made out to? Or do high earners pay their taxes fairly and contribute as much as they should? An analysis of tax payments grouped by tax brackets will help us answer this question.
+
 **Are tax breaks and benefits to the working class enough?**
 The trend in America shows the ever shrinking middle class. How does this happen? Low earners should be given tax breaks as they are already often working paycheck to paycheck. This might help pull low earners out of poverty and back into the middle class. However, due to the trend, we might hypothesize that tax breaks are not sufficient and should be increased.
 
@@ -68,6 +71,8 @@ Here is the citation for the data: (“Soi Tax Stats - Individual Income Tax Sta
 
 The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
 
+The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
+
 The data is validated through governmental quality control. The IRS is very well documented and ensures information is correctly input onto the forms in order to reduce tax fraud. As the IRS performs lots of data validation, the data should be accurate. The data was obtained from the website Data.gov, which is an official government website that houses their open data. There are many datasets on this website that are free to use for anyone.
 
 ### Expected Implications
@@ -79,7 +84,6 @@ Therefore, after the data is collected, analyzed and hard evidence is shown that
 A couple limitations that need to be addressed is the fact that the wealthy people who run the United States of America and the government will take a hard hit once taxation is evenly distributed in all states. This is due to the fact that the wealthy people will take less money home and the government will need to mint more money to accommodate the individuals and organizations building and fixing the parts of the states that need reconstruction.
 
 This is because most government workers use taxpayers money to fix for example concrete streets that have major puddle holes, pay local metro bus workers, police officers, garbage collectors, tax specialists, correctional officers, etc. Cutting down taxes means more money from government pockets to keep up things running and functioning effectively. That's why policy makers need to make a justifiable taxation that would keep both parties at an advantage to live life with ease and have America function without any complications.
-
 
 ### Acknowledgements
 We acknowledge Lilia for being a great TA and helping us with our questions.
@@ -95,5 +99,3 @@ We acknowledge Lilia for being a great TA and helping us with our questions.
 
 ### Appendix A: Questions
 What did you think of our proposal?
-
-
