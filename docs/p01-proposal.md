@@ -28,7 +28,7 @@ Taxes in the U.S. are an issue as old as the country itself. They exist on the n
 Values: Equity, Justice
 One important value concerning this project is equity. Taxes vary between individuals depending on the tax bracket they belong to, for example, which directly links the issue of taxes to the notion of equity. Below is a figure from Statistica describing the wealth distribution over the years between four different categories of earners [\[3\]](https://www.statista.com/statistics/299460/distribution-of-wealth-in-the-united-states/).
 
-![_This is the data visualization for the distribution of net wealth in the U.S. from 1990-2022_](project-group-7-section-aa/docs/images/distr_net_wealth.png)
+![_This is the data visualization for the distribution of net wealth in the U.S. from 1990-2022_](project-group-7-section-aa/docs/images/distrnetwealth.png)
 
 The figure shows an alarming disparity between earners. In general, the top ten percent of earners in the U.S. hold the majority of the country’s net wealth. So, we hope to narrow down areas facing the most financial hardship in order to provide them with equitable solutions. Another important value at stake here is justice, which is closely related to equity. In addition to providing equitable solutions, we hope that this project will help identify systemic causes for inequity in the U.S. and propose ways to fix them in order to provide long-term, equitable access to resources for future generations.
 
