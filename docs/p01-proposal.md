@@ -45,9 +45,6 @@ It may seem intuitive that states with lower personal income tax should have wea
 **Are taxes paid fairly or is the tax system abused by high earners?**
 There is much discourse in the media about tax write offs and ways to avoid paying taxes. Does this happen as often as it’s made out to? Or do high earners pay their taxes fairly and contribute as much as they should? An analysis of tax payments grouped by tax brackets will help us answer this question.
 
-**Are taxes paid fairly or is the tax system abused by high earners?**
-There is much discourse in the media about tax write offs and ways to avoid paying taxes. Does this happen as often as it’s made out to? Or do high earners pay their taxes fairly and contribute as much as they should? An analysis of tax payments grouped by tax brackets will help us answer this question.
-
 **Are tax breaks and benefits to the working class enough?**
 The trend in America shows the ever shrinking middle class. How does this happen? Low earners should be given tax breaks as they are already often working paycheck to paycheck. This might help pull low earners out of poverty and back into the middle class. However, due to the trend, we might hypothesize that tax breaks are not sufficient and should be increased.
 
@@ -68,8 +65,6 @@ There is a file for each state, but the aggregated dataset already combined each
 
 
 Here is the citation for the data: (“Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi.)
-
-The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
 
 The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
 
