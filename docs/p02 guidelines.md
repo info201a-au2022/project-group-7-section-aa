@@ -1,4 +1,4 @@
-##Overview
+## Overview
 
 The purpose of this deliverable is to provide you with the opportunity to explore your final project dataset(s), and become familiar with collaborative coding techniques. By completing the assignment, you'll demonstrate the following skills:
 
@@ -86,4 +86,4 @@ If a legend is present, the legend label has been set to be easily readable
 Submission
 As with other assignments, we expect your code to pass all linting tests and use the appropriate packages described throughout the course. As with the previous assignments, you should add and commit your changes using git, and push your assignment to GitHub. You will submit the URL of your repository as your assignment. Only one person will need to submit, because this is configured as a group project. 
 
-# All project deliverables should follow the INFO-201 Style Guide. 
+## All project deliverables should follow the INFO-201 Style Guide. 
