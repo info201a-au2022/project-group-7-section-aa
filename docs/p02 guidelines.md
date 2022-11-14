@@ -2,10 +2,10 @@
 
 The purpose of this deliverable is to provide you with the opportunity to explore your final project dataset(s), and become familiar with collaborative coding techniques. By completing the assignment, you'll demonstrate the following skills:
 
-Performing an exploratory analysis of a dataset
-Using R Markdown to create a report on the web
-Coding with others.
-All of the work you do this is project deliverable will set the foundations for your final deliverable. That is, for the final deliverable, you will iterate on this work and add to it. 
+- Performing an exploratory analysis of a dataset
+- Using R Markdown to create a report on the web
+- Coding with others.
+- All of the work you do this is project deliverable will set the foundations for your final deliverable. That is, for the final deliverable, you will iterate on this work and add to it. 
 
 ## Getting started 
 You should return to the design brief and carefully re-read the project objectives. 
@@ -17,17 +17,17 @@ For this assignment, your team will create a report about the datasets you have 
 
 ### A. Data analysis report. Your data analysis report, which will be created in index.Rmd, should contain the following: 
 
-"Dynamic" paragraph. In will include a well-written paragraph of summary information, citing at least 5 values calculated from the data. Each value should be presented professionally (see INFO-201 Style Guide). Here, the term "dynamic" means that the values are calculated dynamically.
-Table. You will include a table of aggregated data. Your table must group data by one feature.  
-Three charts. You will  that display information from the data (what you visualize is up to you). 
+- "Dynamic" paragraph. In will include a well-written paragraph of summary information, citing at least 5 values calculated from the data. Each value should be presented professionally (see INFO-201 Style Guide). Here, the term "dynamic" means that the values are calculated dynamically.
+- Table. You will include a table of aggregated data. Your table must group data by one feature.  
+- Three charts. You will  that display information from the data (what you visualize is up to you). 
 ### B. R and Markdown File organization. Unlike other assignments, you'll keep your code organized in multiple different files. This helps keep your project more modular and clear. You'll create six different files for this project:
 
-An index.Rmd file that renders your report ("Dynamic" paragraph, table, and three charts). 
-A .R source file that calculates summary information to be included in your report
-A .R source file that creates a table of summary information to be included in your report
-A .R source file that creates your first chart
-A .R source file that creates your second chart
-A .R source file that creates your third chart
+1. An index.Rmd file that renders your report ("Dynamic" paragraph, table, and three charts). 
+2. A .R source file that calculates summary information to be included in your report
+3. A .R source file that creates a table of summary information to be included in your report
+4. A .R source file that creates your first chart
+5. A .R source file that creates your second chart
+6. A .R source file that creates your third chart
 As we have learned in class, put your R code in the  /source  directory and put your *.Rmd report and *.HTML files in the /docs directory.
 
 ### C. The /data directory. Please include your data files in the /data directory. Also, if you are using APIs describe them in the /data/README.md file.
@@ -45,8 +45,11 @@ Here is additional information on each section:
 In index.Rmd file, you should run the other scripts to generate the necessary content for your report:
 
 "Dynamic" paragraph. Write a summary paragraph that includes information calculated by your summary information function. (See chapter 18 in the book.)
+
 Table. (a) Render your table.  (b) In a short paragraph beneath your table, describe pertinent observations found in it
+
 Three charts. (a) Render each of your charts. (b) In a short paragraph beneath each chart, describe the purpose of the chart and pertinent observations. 
+
 Summary Information Script (B.2 above)
 To implement the summary function, you should store summary information in a list. For example:
 
