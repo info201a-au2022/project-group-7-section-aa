@@ -1,0 +1,1 @@
+### Find summary info for dynamic paragraph
