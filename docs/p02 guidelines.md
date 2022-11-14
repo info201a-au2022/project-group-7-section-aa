@@ -66,8 +66,11 @@ The file must compute at least 5 different values from your data.  You should sh
 You should write code to produce a table of aggregate information about it. It must perform a groupby() operation to show a dimension of the dataset as grouped by a particular feature (column). We expect the included table to:
 
 Have well formatted (i.e., human readable) column names (so you'll probably have to change them)
+
 Only contain relevant information (i.e., only select some columns of interest)
+
 Be intentionally sorted in a meaningful way
+
 Round any quantitative values so they are displayed in a manner that isn't distracting
 When you display the table in your index.Rmd file, you must also include a brief paragraph, describing why you included the table, and what information it reveals.
 
@@ -82,10 +85,14 @@ For each chart, we expect a professional appearance, with effective label, title
 
 Chart types are intentionally selected to reveal particular patterns in the dataset
 Optimal graphical encodings are selected to present the data in the most interpretable way
+
 For two dimensional plots, X, Y axis labels are set with clear human readable titles
 When appropriate, the chart has a title
+
 A legend is present for any color encodings
+
 If a legend is present, the legend label has been set to be easily readable
+
 Submission
 As with other assignments, we expect your code to pass all linting tests and use the appropriate packages described throughout the course. As with the previous assignments, you should add and commit your changes using git, and push your assignment to GitHub. You will submit the URL of your repository as your assignment. Only one person will need to submit, because this is configured as a group project. 
 
