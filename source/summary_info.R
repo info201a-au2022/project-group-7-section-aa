@@ -1,7 +1,6 @@
 ### Find summary info for dynamic paragraph
-library(dplyr)
-filename <- "tax_returns"
-df <- read.csv("taxdata.csv")
+library(tidyverse)
+df <- read.csv("../data/taxdata.csv")
 # tax_returns.R 
 # A source file that takes in a dataset and returns a list of info about it:
 tax_returns <- list()

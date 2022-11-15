@@ -1,4 +1,4 @@
-data <- read.csv("taxdata.csv")
+data <- read.csv("../data/taxdata.csv")
 # Adjusted Gross Income is the number IRS uses to calculate income tax
 total_income <- sum(select(data, Adjusted.Gross.Income))
 total_taxes <- sum(select(data, Total.tax.payments.amount))

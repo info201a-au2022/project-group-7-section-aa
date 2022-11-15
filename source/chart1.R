@@ -2,7 +2,7 @@
 # Scatter plot of log(Total tax payments amount) vs log(AGI) by tax bracket
 library(tidyverse)
 
-taxes <- read_csv('data/taxdata.csv')
+taxes <- read_csv('../data/taxdata.csv')
  
 taxes <- taxes %>% mutate(Adjusted.Size.Gross.Income.Category = 
                           case_when(Adjusted.Size.Gross.Income.Category == "under $25,000" ~ "1. Under $25,000",

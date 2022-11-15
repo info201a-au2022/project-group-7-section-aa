@@ -1,6 +1,6 @@
 ### Create third chart
 library(tidyverse)
-data <- read.csv("taxdata.csv")
+data <- read.csv("../data/taxdata.csv")
 data <- data %>% mutate(Adjusted.Size.Gross.Income.Category = 
                           case_when(Adjusted.Size.Gross.Income.Category == "under $25,000" ~ "1. Under $25",
                                     Adjusted.Size.Gross.Income.Category == "$25,000 to $50,000" ~ "2. $25 - $50",
