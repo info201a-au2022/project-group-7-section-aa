@@ -1,12 +1,13 @@
 ---
-title: "Your Project Title"
-author: "project team members"
-date: "1/22/2022"
+title: "Understanding the US Tax Landscape"
+author: "Shivesh Ummat summat@uw.edu, David Li laviddi@uw.edu, Ismail Ibrahim ishy206@uw.edu"
+date: "November 14, 2022"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ## What is this file for?
@@ -22,6 +23,12 @@ knitr::opts_chunk$set(echo = TRUE)
 # directory(..), down into source (/source), and 
 # then "source" an R file (data_access.R)
 source("../source/data_access.R")
+source("aggregate_table.R", local = knitr::knit_global())
+source("chart1.R", local = knitr::knit_global())
+source("chart2.R", local = knitr::knit_global())
+source("chart3.R", local = knitr::knit_global())
+source("summary_info.R", local = knitr::knit_global())
+
 data_access_test()
 ```
 
