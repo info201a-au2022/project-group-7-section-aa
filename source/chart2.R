@@ -18,7 +18,7 @@ boxplots <- ggplot(taxes,
                    fill = Adjusted.Size.Gross.Income.Category)) +
   geom_boxplot() +
   scale_x_log10() +
-  labs(title = "Boxplots of log(Average salary per person)",
+  labs(title = "Boxplots of Average salary per person",
        subtitle = "by tax bracket",
        x = "Average salary per person (thousands of dollars)",
        fill = "Tax bracket")
