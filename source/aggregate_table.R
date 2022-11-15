@@ -28,4 +28,22 @@ aggregate_table <- data %>%
             "Effective Tax Rate Percent"=
               100 * round(sum(Total.tax.payments.amount)/sum(Adjusted.Gross.Income), 4))
 
+high_earners_percent_income <- aggregate_table %>% 
+  filter(Tax.Bracket.Status == "6. $200,000 or more") %>% 
+  pull("Percentage of US Total Income")
 
+high_earners_percent_tax <- aggregate_table %>% 
+  filter(Tax.Bracket.Status == "6. $200,000 or more") %>% 
+  pull("Percentage of US Total Taxes")
+
+low_earners_percent_income <- aggregate_table %>% 
+  filter(Tax.Bracket.Status == "1. Under $25,000") %>% 
+  pull("Percentage of US Total Income")
+
+low_earners_percent_tax <- aggregate_table %>% 
+  filter(Tax.Bracket.Status == "1. Under $25,000") %>% 
+  pull("Percentage of US Total Taxes")
+
+low_earners_tax_rate <- aggregate_table %>% 
+  filter(Tax.Bracket.Status == "1. Under $25,000") %>% 
+  pull("Effective Tax Rate Percent")
