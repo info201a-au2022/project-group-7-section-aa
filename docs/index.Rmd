@@ -24,7 +24,6 @@ source("../source/data_access.R")
 Exploratory data analysis of IRS Tax Return Data from 2019 helps elucidate trends in income and tax distribution. This dataset contains `r prettyNum(tax_returns$numobservations,big.mark=",",scientific=FALSE)` rows of data, each with `r prettyNum(tax_returns$numfeatures,big.mark=",",scientific=FALSE)` features. Each row represents one tax bracket and one zip code across the US. For each row, features such as number of returns filed, tax paid, income earned are recorded. In total there are `r prettyNum(tax_returns$numzipcodes,big.mark=",",scientific=FALSE)` number of Zip Codes that data has been collected for across `r tax_returns$numstates` number of states (including Washington, D.C.). Throughout all the observations,  the sum of the number of single returns, joint returns, and head of household returns totals to be `r prettyNum(tax_returns$totalreturns,big.mark=",",scientific=FALSE)`. Furthermore, the total amount of taxes collected in the US in 2019 was \$`r prettyNum(tax_returns$totaltaxescollected,big.mark=",",scientific=FALSE)`. Interestingly, the zip code with the highest amount of tax collected in the entire US was `r tax_returns$maxtaxcollectedzipcode`, in Manhattan, `r tax_returns$maxtaxcollectedstate`, where \$`r prettyNum(tax_returns$maxtaxcollected,big.mark=",",scientific=FALSE)` was collected. 
 
 ```{r table, echo = FALSE, warning = FALSE, message = FALSE}
-?kable
 kable(aggregate_table,
       caption = "Income and Tax Statistics for each Tax Bracket in the US",
       col.names = c("Tax Bracket Status",
