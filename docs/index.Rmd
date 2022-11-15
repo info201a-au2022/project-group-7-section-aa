@@ -8,54 +8,43 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(knitr)
 ```
 
-## What is this file for?
 
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
+```{r source, include = FALSE}
 source("../source/aggregate_table.R")
 source("../source/chart1.R")
 source("../source/chart2.R")
 source("../source/chart3.R")
 source("../source/summary_info.R")
+source("../source/data_access.R")
 ```
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 After computing together my tax return data, I've managed to calculate five significant pieces of data that would help my group and tax payers to visually see how the tax return works based on geographical location all across America . On the summary information function, the amount of rows on our data is about 165,853. The amount of columns present in our data set based on tax returns is about 63 columns long. Based on our geographical locations on all the states in our tax return file, we have conducted and have all the zip codes corresponding to those state zip codes. We concluded that we have about 27594 total zip codes in our data set. Furthermore, we also have the number of states in our tax return data set to about 51 one states whose taxes have been filed and information of taxpayers been collected. And finally, we have concluded that the number of total tax returns which includes the Number of Single returns, Number of Joint returns and finally the Number of Head of household returns also included to about 151,176,150.00 total. That is the amount of money returned by the IRS back to the hardworking Taxpayers. 
 
-
-```{r cars}
-summary(cars)
+```{r table, echo = FALSE, warning = FALSE, message = FALSE}
+?kable
+kable(aggregate_table,
+      caption = "Income and Tax Statistics for each Tax Bracket in the US",
+      col.names = c("Tax Bracket Status",
+                    "Total Number of Returns Filed (in millions)", 
+                    "Total Adjusted Gross Income (in billions of dollars)", 
+                    "Percentage of US Total Income", 
+                    "Total Tax Payments (in billions of dollars)",
+                    "Percentage of US Total Taxes",
+                    "Effective Tax Rate Percent"),
+      align = 'ccccccc')
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r chart1, echo = FALSE, warning = FALSE}
+scatter_plot
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r chart2, echo = FALSE, warning = FALSE}
+plot(boxplots)
+```
+
+```{r chart3, echo = FALSE, warning = FALSE}
+plot(bar_chart_income_not_from_wages)
+```
