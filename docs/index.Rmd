@@ -43,6 +43,9 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+After computing together my tax return data, I've managed to calculate five significant pieces of data that would help my group and tax payers to visually see how the tax return works based on geographical location all across America . On the summary information function, the amount of rows on our data is about 165,853. The amount of columns present in our data set based on tax returns is about 63 columns long. Based on our geographical locations on all the states in our tax return file, we have conducted and have all the zip codes corresponding to those state zip codes. We concluded that we have about 27594 total zip codes in our data set. Furthermore, we also have the number of states in our tax return data set to about 51 one states whose taxes have been filed and information of taxpayers been collected. And finally, we have concluded that the number of total tax returns which includes the Number of Single returns, Number of Joint returns and finally the Number of Head of household returns also included to about 151,176,150.00 total. That is the amount of money returned by the IRS back to the hardworking Taxpayers. 
+
+
 ```{r cars}
 summary(cars)
 ```
