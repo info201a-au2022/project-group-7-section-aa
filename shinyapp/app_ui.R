@@ -23,8 +23,9 @@ home_panel <- tabPanel(
   )
 )
 
-### CHART 1
-# Chart 1 sidebar content
+### CHART 1 - map of one state with highlightable counties or entire US with states highlighted 
+### (info: Name of county, total # returns, total tax payments issued, total income)
+# Chart 1 sidebar content - choose a state
 chart1_sidebar_content <- sidebarPanel(selectInput(inputId = "input1",
                                                    label = "*insert text*",
                                                    choice = list("choice 1" = "var1",
@@ -53,8 +54,8 @@ chart1_panel <- tabPanel(
   )
 )
 
-### CHART 2
-# Chart 2 sidebar content
+### CHART 2 - bar chart to compare taxes paid per bracket 
+# Chart 2 sidebar content. select two states to compare or select "USA"
 chart2_sidebar_content <- sidebarPanel(selectInput(inputId = "input2",
                                                    label = "*insert text*",
                                                    choice = list("choice 1" = "var1",
@@ -83,8 +84,8 @@ chart2_panel <- tabPanel(
   )
 )
 
-### CHART 3
-# Chart 3 sidebar content
+### CHART 3 - income on the x axis and deductions on the y axis
+# Chart 3 sidebar content - choose income range, choose a state?
 chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "input3",
                                                    label = "*insert text*",
                                                    choice = list("choice 1" = "var1",
