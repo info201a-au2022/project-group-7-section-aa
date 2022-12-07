@@ -26,28 +26,84 @@ home_panel <- tabPanel(
 ### CHART 1 - map of one state with highlightable counties or entire US with states highlighted 
 ### (info: Name of county, total # returns, total tax payments issued, total income)
 # Chart 1 sidebar content - choose a state
-chart1_sidebar_content <- sidebarPanel(selectInput(inputId = "input1",
-                                                   label = "*insert text*",
-                                                   choice = list("choice 1" = "var1",
-                                                                 "choice 2" = "var2")))
+chart1_sidebar_content <- sidebarPanel(selectInput(inputId = "map_state",
+                                                   label = "Choose a state",
+                                                   choices = list("Alabama" = "alabama",
+                                                                 "Arizona" = "arizona",
+                                                                 "Arkansas" = "arkansas",
+                                                                 "California" = "california",
+                                                                 "Colorado" = "colorado",
+                                                                 "Connecticut" = "connecticut",
+                                                                 "Delaware" = "delaware",
+                                                                 "Florida" = "florida",
+                                                                 "Georgia" = "georgia",
+                                                                 "Idaho" = "idaho",
+                                                                 "Illinois" = "illinois",
+                                                                 "Indiana" = "indiana",
+                                                                 "Iowa" = "iowa",
+                                                                 "Kansas" = "kansas",
+                                                                 "Kentucky" = "kentucky",
+                                                                 "Louisiana" = "louisiana",
+                                                                 "Maine" = "maine",
+                                                                 "Maryland" = "maryland",
+                                                                 "Massachusetts" = "massachusetts",
+                                                                 "Michigan" = "michigan",
+                                                                 "Minnesota" = "minnesota",
+                                                                 "Mississippi" = "mississippi",
+                                                                 "Missouri" = "missouri",
+                                                                 "Montana" = "montana",
+                                                                 "Nebraska" = "nebraska",
+                                                                 "Nevada" = "nevada",
+                                                                 "New Hampshire" = "new hampshire",
+                                                                 "New Jersey" = "new jersey",
+                                                                 "New Mexico" = "new mexico",
+                                                                 "New York" = "new york",
+                                                                 "North Carolina" = "north carolina",
+                                                                 "North Dakota" = "north dakota",
+                                                                 "Ohio" = "ohio",
+                                                                 "Oklahoma" = "oklahoma",
+                                                                 "Oregon" = "oregon",
+                                                                 "Pennsylvania" = "pennsylvania",
+                                                                 "Rhode Island" = "rhode island",
+                                                                 "South Carolina" = "south carolina",
+                                                                 "South Dakota" = "south dakota",
+                                                                 "Tennessee" = "tennessee",
+                                                                 "Texas" = "texas",
+                                                                 "Utah" = "utah",
+                                                                 "Vermont" = "vermont",
+                                                                 "Virginia" = "virginia",
+                                                                 "Washington" = "washington",
+                                                                 "West Virginia" = "west virginia",
+                                                                 "Wisconsin" = "wisconsin",
+                                                                 "Wyoming" = "wyoming"),
+                                                   selected = "washington"),
+                                       selectInput(inputId = "map_val",
+                                                   label = "Choose a quantity",
+                                                   choices = list("Total income" = "total.income.amount",
+                                                                  "Total itemized deductions" = "total.itemized.deductions.amount",
+                                                                  "Number of returns" = "total.number.of.returns",
+                                                                  "Proportion of income taxed" = "proportion.of.income.taxed",
+                                                                  "Proportion of taxable income" = "proportion.of.taxable.income",
+                                                                  "Proportion of income not from wages" = "proportion.of.income.not.from.wages"),
+                                                   selected = "total.income.amount"))
 # Chart 1 main content
-chart1_main_content <- mainPanel(p("Put chart 1 here"),
-                                 p("Write summary paragraph. Lorem ipsum dolor 
-                                   sit amet, consectetur adipiscing elit, sed do 
-                                   eiusmod tempor incididunt ut labore et dolore 
-                                   magna aliqua. Ut enim ad minim veniam, quis 
-                                   nostrud exercitation ullamco laboris nisi ut 
-                                   aliquip ex ea commodo consequat. Duis aute 
-                                   irure dolor in reprehenderit in voluptate velit 
-                                   esse cillum dolore eu fugiat nulla pariatur. 
-                                   Excepteur sint occaecat cupidatat non proident, 
-                                   sunt in culpa qui officia deserunt mollit anim 
-                                   id est laborum."))
+chart1_main_content <- mainPanel(plotlyOutput("chart1"))
 
 # Chart 1 page
 chart1_panel <- tabPanel(
   title = "Chart 1",
-  titlePanel("This is chart 1"),
+  titlePanel("Choropleth Map of State Tax Information by County"),
+  p("Write summary paragraph. Lorem ipsum dolor 
+     sit amet, consectetur adipiscing elit, sed do 
+     eiusmod tempor incididunt ut labore et dolore 
+     magna aliqua. Ut enim ad minim veniam, quis 
+     nostrud exercitation ullamco laboris nisi ut 
+     aliquip ex ea commodo consequat. Duis aute 
+     irure dolor in reprehenderit in voluptate velit 
+     esse cillum dolore eu fugiat nulla pariatur. 
+     Excepteur sint occaecat cupidatat non proident, 
+     sunt in culpa qui officia deserunt mollit anim 
+     id est laborum."),
   sidebarLayout(
     chart1_sidebar_content,
     chart1_main_content
@@ -93,28 +149,83 @@ chart2_panel <- tabPanel(
 
 ### CHART 3 - income on the x axis and deductions on the y axis
 # Chart 3 sidebar content - choose income range, choose a state?
-chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "input3",
-                                                   label = "*insert text*",
-                                                   choice = list("choice 1" = "var1",
-                                                                 "choice 2" = "var2")))
+chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "plot_state",
+                                                   label = "Choose a state",
+                                                   choices = list("Alabama" = "alabama",
+                                                                  "Arizona" = "arizona",
+                                                                  "Arkansas" = "arkansas",
+                                                                  "California" = "california",
+                                                                  "Colorado" = "colorado",
+                                                                  "Connecticut" = "connecticut",
+                                                                  "Delaware" = "delaware",
+                                                                  "Florida" = "florida",
+                                                                  "Georgia" = "georgia",
+                                                                  "Idaho" = "idaho",
+                                                                  "Illinois" = "illinois",
+                                                                  "Indiana" = "indiana",
+                                                                  "Iowa" = "iowa",
+                                                                  "Kansas" = "kansas",
+                                                                  "Kentucky" = "kentucky",
+                                                                  "Louisiana" = "louisiana",
+                                                                  "Maine" = "maine",
+                                                                  "Maryland" = "maryland",
+                                                                  "Massachusetts" = "massachusetts",
+                                                                  "Michigan" = "michigan",
+                                                                  "Minnesota" = "minnesota",
+                                                                  "Mississippi" = "mississippi",
+                                                                  "Missouri" = "missouri",
+                                                                  "Montana" = "montana",
+                                                                  "Nebraska" = "nebraska",
+                                                                  "Nevada" = "nevada",
+                                                                  "New Hampshire" = "new hampshire",
+                                                                  "New Jersey" = "new jersey",
+                                                                  "New Mexico" = "new mexico",
+                                                                  "New York" = "new york",
+                                                                  "North Carolina" = "north carolina",
+                                                                  "North Dakota" = "north dakota",
+                                                                  "Ohio" = "ohio",
+                                                                  "Oklahoma" = "oklahoma",
+                                                                  "Oregon" = "oregon",
+                                                                  "Pennsylvania" = "pennsylvania",
+                                                                  "Rhode Island" = "rhode island",
+                                                                  "South Carolina" = "south carolina",
+                                                                  "South Dakota" = "south dakota",
+                                                                  "Tennessee" = "tennessee",
+                                                                  "Texas" = "texas",
+                                                                  "Utah" = "utah",
+                                                                  "Vermont" = "vermont",
+                                                                  "Virginia" = "virginia",
+                                                                  "Washington" = "washington",
+                                                                  "West Virginia" = "west virginia",
+                                                                  "Wisconsin" = "wisconsin",
+                                                                  "Wyoming" = "wyoming"),
+                                                   selected = "washington"),
+                                       selectInput(inputId = "plot_var",
+                                                   label = "Choose a quantity",
+                                                   choices = list("Total itemized deductions" = "Total.itemized.deductions.amount",
+                                                                  "Number of returns" = "Total.number.of.returns",
+                                                                  "Income not from wages" = "Income.not.from.wages.amount",
+                                                                  "Proportion of income taxed" = "Proportion.of.income.taxed",
+                                                                  "Proportion of taxable income" = "Proportion.of.taxable.income",
+                                                                  "Proportion of income not from wages" = "Proportion.of.income.not.from.wages")))
 # Chart 3 main content
-chart3_main_content <- mainPanel(p("Put chart 3 here"),
-                                 p("Write summary paragraph. Lorem ipsum dolor 
-                                   sit amet, consectetur adipiscing elit, sed do 
-                                   eiusmod tempor incididunt ut labore et dolore 
-                                   magna aliqua. Ut enim ad minim veniam, quis 
-                                   nostrud exercitation ullamco laboris nisi ut 
-                                   aliquip ex ea commodo consequat. Duis aute 
-                                   irure dolor in reprehenderit in voluptate velit 
-                                   esse cillum dolore eu fugiat nulla pariatur. 
-                                   Excepteur sint occaecat cupidatat non proident, 
-                                   sunt in culpa qui officia deserunt mollit anim 
-                                   id est laborum."))
+chart3_main_content <- mainPanel(plotlyOutput("chart3"))
 
 # Chart 3 page
 chart3_panel <- tabPanel(
   title = "Chart 3",
   titlePanel("This is chart 3"),
+  p("Write summary paragraph. Lorem ipsum dolor 
+     sit amet, consectetur adipiscing elit, sed do 
+     eiusmod tempor incididunt ut labore et dolore 
+     magna aliqua. Ut enim ad minim veniam, quis 
+     nostrud exercitation ullamco laboris nisi ut 
+     aliquip ex ea commodo consequat. Duis aute 
+     irure dolor in reprehenderit in voluptate velit 
+     esse cillum dolore eu fugiat nulla pariatur. 
+     Excepteur sint occaecat cupidatat non proident, 
+     sunt in culpa qui officia deserunt mollit anim 
+     id est laborum."),
   sidebarLayout(
     chart3_sidebar_content,
     chart3_main_content
