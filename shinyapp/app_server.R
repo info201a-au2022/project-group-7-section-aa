@@ -1,11 +1,13 @@
 # Server
 library(tidyverse)
 library(plotly)
+library(maps)
+library(mapproj)
 
-taxes <- read_csv('../data/taxdata.csv')
+taxes <- read_csv('data/taxdata.csv')
 
-zip_to_county <- read_csv('../data/zip_to_county.csv')
-st_abbr_to_name <- read_csv('../data/state_abbr_to_name.csv')
+zip_to_county <- read_csv('data/zip_to_county.csv')
+st_abbr_to_name <- read_csv('data/state_abbr_to_name.csv')
 
 # format data for map
 taxes <- taxes %>% select(-c(...1, X.1, X))
