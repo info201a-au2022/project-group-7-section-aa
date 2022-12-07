@@ -56,28 +56,35 @@ chart1_panel <- tabPanel(
 
 ### CHART 2 - bar chart to compare taxes paid per bracket 
 # Chart 2 sidebar content. select two states to compare or select "USA"
-chart2_sidebar_content <- sidebarPanel(selectInput(inputId = "input2",
-                                                   label = "*insert text*",
-                                                   choice = list("choice 1" = "var1",
-                                                                 "choice 2" = "var2")))
+chart2_sidebar_content <- sidebarPanel(
+  selectInput(inputId = "first_state_chart_2",
+              label = "Choose a State",
+              selected = "Louisiana",
+              choice = state.name),
+  selectInput(inputId = "second_state_chart_2",
+              label = "Choose Another State",
+              selected = "Washington",
+              choice = state.name))
 # Chart 2 main content
-chart2_main_content <- mainPanel(p("Put chart 2 here"),
-                                 p("Write summary paragraph. Lorem ipsum dolor 
-                                   sit amet, consectetur adipiscing elit, sed do 
-                                   eiusmod tempor incididunt ut labore et dolore 
-                                   magna aliqua. Ut enim ad minim veniam, quis 
-                                   nostrud exercitation ullamco laboris nisi ut 
-                                   aliquip ex ea commodo consequat. Duis aute 
-                                   irure dolor in reprehenderit in voluptate velit 
-                                   esse cillum dolore eu fugiat nulla pariatur. 
-                                   Excepteur sint occaecat cupidatat non proident, 
-                                   sunt in culpa qui officia deserunt mollit anim 
-                                   id est laborum."))
+chart2_main_content <- mainPanel(plotlyOutput("chart2"),
+                                 p("This visualization looks at the amount of tax that 
+                                   the IRS charges to different tax brackets in 
+                                   different states. We can easily compare any two
+                                   states with this graph. 
+                                   
+                                   We believe that those
+                                   in the lowest tax bracket should not be subject
+                                   to high tax rates. As tax bracket increases,
+                                   earners should pay more percent of their income
+                                   in taxes. This is a fundamental rule of tax 
+                                   brackets and is the reason why federal income
+                                   tax rates increase as income increases. However,
+                                   this is not how taxes "))
 
 # Chart 2 page
 chart2_panel <- tabPanel(
   title = "Chart 2",
-  titlePanel("This is chart 2"),
+  titlePanel("Assessment of Taxes by Bracket in US States"),
   sidebarLayout(
     chart2_sidebar_content,
     chart2_main_content
