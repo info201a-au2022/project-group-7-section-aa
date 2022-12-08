@@ -131,7 +131,15 @@ chart2_main_content <- mainPanel(plotlyOutput("chart2"),
                                    this is not how taxes in the US seem to be distributed
                                    in practice. The lower tax bracket should be charged 
                                    the least percent of their income, but those earners actually have
-                                   almost the same tax burden as the top earners in some states. "))
+                                   almost the same tax burden as the top earners in some states.
+                                   
+                                   We find that the trend is different in Southern states (typically leaning conservative) 
+                                   versus Northwest states (typically leaning liberal). In the South, the tax burden on 
+                                   the lowest bracket is almost equal to that for the top bracket. This indicates that 
+                                   it may be very difficult to live at or around the poverty line in these states. 
+                                   In addition to other hardship, almost 20% of one's paycheck will be taken to tax. In the PNW, 
+                                   however, this burden is only around 12-13%. This makes it easier to keep income and start
+                                   to move out of the grasps of poverty."))
 
 # Chart 2 page
 chart2_panel <- tabPanel(
@@ -249,6 +257,9 @@ summary_panel <- tabPanel(
   fluidPage(
     p(
       uiOutput('summary')
+    ),
+    p(
+      dataTableOutput('table')
     )
   )
 )

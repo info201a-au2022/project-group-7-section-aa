@@ -82,6 +82,34 @@ scatter_df <- scatter_df %>%
                      Adjusted.Size.Gross.Income.Category == "$100,000 to $200,000" ~ "5. $100,000 - $200,000",
                      Adjusted.Size.Gross.Income.Category == "$200,000 or more" ~ "6. $200,000 or more"))
 
+total_income <- sum(select(taxes, Adjusted.Gross.Income))
+total_taxes <- sum(select(taxes, Total.tax.payments.amount))
+taxes_table <- taxes %>% mutate(Adjusted.Size.Gross.Income.Category = 
+                          case_when(Adjusted.Size.Gross.Income.Category == "under $25,000" ~ "1. Under $25,000",
+                                    Adjusted.Size.Gross.Income.Category == "$25,000 to $50,000" ~ "2. $25,000 to $50,000",
+                                    Adjusted.Size.Gross.Income.Category == "$50,000 to $75,000" ~ "3. $50,000 to $75,000",
+                                    Adjusted.Size.Gross.Income.Category == "$75,000 to $100,000" ~ "4. $75,000 to $100,000",
+                                    Adjusted.Size.Gross.Income.Category == "$100,000 to $200,000" ~ "5. $100,000 to $200,000",
+                                    Adjusted.Size.Gross.Income.Category == "$200,000 or more" ~ "6. $200,000 or more"))
+
+aggregate_table <- taxes_table %>% 
+  rename("Tax.Bracket.Status" = "Adjusted.Size.Gross.Income.Category") %>% 
+  group_by(Tax.Bracket.Status) %>% 
+  summarize("Total Number of Returns Filed (in millions)" = 
+              round((sum(Number.of.Single.Returns) + 
+                       sum(Number.of.Head.of.Household.Returns) +
+                       sum(Number.of.Joint.Returns))/1000000, 2),
+            "Total Adjusted Gross Income (in billions of dollars)" = 
+              round(sum(Adjusted.Gross.Income)/1000000, 2),
+            "Percentage of US Total Income" =
+              100 * round(sum(Adjusted.Gross.Income)/total_income, 4),
+            "Total Tax Payments (in billions of dollars)" =
+              round(sum(Total.tax.payments.amount)/1000000, 2),
+            "Percentage of US Total Taxes" =
+              100 * round(sum(Total.tax.payments.amount)/total_taxes, 4),
+            "Effective Tax Rate Percent"=
+              100 * round(sum(Total.tax.payments.amount)/sum(Adjusted.Gross.Income), 4))
+
 # Create markdown report to be rendered
 report_md = "## Tax Returns
 # Understanding the Tax Landscape in the US by Zip Code
@@ -324,17 +352,22 @@ capital gains will be effectively taxed as ordinary income. This will decrease t
 this tax evasion strategy and promote equal paying of taxes.
 
 We also conclude that **the tax system in the US does not provide enough benefits to the lower
-class**, furthering the cycle of poverty. The largest tax bracket by number of returns is income under $25,000, 
+class**, furthering the cycle of poverty. An interesting results from our analysis is that some states 
+provide more benefits to the lower class than others. Southern states typically have a higher burden on the working class
+while Northern states do not show this as much.. This might be due to economically conservative policies that allow for lower taxes and more tax evasion, but end up shifting 
+the burden down to the low earners. Summary statistics help us look at this problem at a larger scale, across the whole US. 
+
+The largest tax bracket by number of returns is income under $25,000 - **49.24 million returns** - 
 highlighting the ever-increasing number of low earners in the US. Why are so many people stuck living paycheck-to-paycheck,
 just above or falling below the poverty line? This is because, on average, these earners pay *15.79% of their income in taxes*. 
-This number is lower for the middle three brackets. This rate is the highest for high earners, which is most fair, 
-but should be lowest for the bottom bracket. The fact that it is not shows injustice in the US tax system.
+This number is lower for the middle four brackets. This rate is the highest for high earners, which is most fair, 
+but should be lowest for the bottom bracket. The fact that it is not shows **injustice in the US tax system**.
 
 Interestingly, the total Adjusted Gross Income from tax bracket 2 is more than 3 and 4, suggesting that the middle class is shrinking. 
 Unsurprisingly, high earners in tax bracket 5 make up 37.09% of the total income in the US, while the lowest 
-earners in bracket 1 (which make up almost 6x more returns) only account for 5.19% of income. 
-High earners (bracket 5) are paying upwards of 52.83% of total US taxes, 
-      almost 1 trillion US dollars."
+**earners in bracket 1 (which make up almost 6x more returns) only account for 5.19% of income**. 
+High earners (bracket 5) are paying upwards of 52.83% of total US taxes, almost 1 trillion US dollars. The following table shows more of these statistics:"
+
 server <- function(input, output) {
 ### Plot first chart
   output$chart1 <- renderPlotly({
@@ -439,4 +472,5 @@ server <- function(input, output) {
   output$summary <- renderUI({
     HTML(markdown::markdownToHTML(text = summary_md, fragment.only = TRUE))
   })
+  output$table <- renderDataTable(aggregate_table)
 }
