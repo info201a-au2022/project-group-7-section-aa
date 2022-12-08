@@ -9,7 +9,7 @@ home_panel <- tabPanel(
   titlePanel("An Analysis of Taxes in the US"),
   fluidPage(
     img("", src = "https://s.yimg.com/ny/api/res/1.2/1AVjgz.Y0ksYNJ0FYvN91w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/gobankingrates_644/ec702bc1147bfe76112ce7f39f871388"),
-    p(uiOutput('introduction')),
+    p(uiOutput('introduction'))
   )
 )
 
@@ -257,11 +257,7 @@ summary_panel <- tabPanel(
 report_panel <- tabPanel(
   title = "Report",
   titlePanel("Report"),
-  fluidPage(
-    p(
-      uiOutput('report')
-)
-  )
+  fluidPage(p(uiOutput('report')))
 )
 
 ui <- navbarPage("Taxes",

@@ -81,6 +81,8 @@ scatter_df <- scatter_df %>%
                      Adjusted.Size.Gross.Income.Category == "$75,000 to $100,000" ~ "4. $75,000 - $100,000",
                      Adjusted.Size.Gross.Income.Category == "$100,000 to $200,000" ~ "5. $100,000 - $200,000",
                      Adjusted.Size.Gross.Income.Category == "$200,000 or more" ~ "6. $200,000 or more"))
+
+# Create markdown report to be rendered
 report_md = "## Tax Returns
 # Understanding the Tax Landscape in the US by Zip Code
 #### Authors:
@@ -100,7 +102,7 @@ Our project leverages IRS data from tax returns to examine the fiscal landscape 
 
 ### Problem Domain
 #### Project Framing
-Taxes in the U.S. are an issue as old as the country itself. They exist on the notion that everybody pays their fair share: but is this true? The answer is no. The IRS projects that the amount of income tax money owed but not paid will be 540 billion dollars per year for 2017 to 2019, and that those referred to as high earners are responsible for a disproportionate share of these unpaid taxes. The latter does not come as a surprise, as prominent figures, such as Donald Trump, often appear in the media for keeping their tax returns private. In fact, recently, the former president filed a case to the Supreme Court requesting that they block the pending disclosure of his personal tax returns from House Democrats. With all this in mind, we seek to address issues related to wealth distribution and taxed income by state and nationally.
+Taxes in the U.S. are an issue as old as the country itself. They exist on the notion that everybody pays their fair share: but is this true? The answer is no. The IRS projects that the amount of income tax money owed but not paid will be 540 billion dollars per year for 2017 to 2019, and that those referred to as high earners are responsible for a disproportionate share of these unpaid taxes [[1]](https://abcnews.go.com/Business/wireStory/irs-growing-gap-us-income-taxes-owed-paid-92304350). The latter does not come as a surprise, as prominent figures, such as Donald Trump, often appear in the media for keeping their tax returns private. In fact, recently, the former president filed a case to the Supreme Court requesting that they block the pending disclosure of his personal tax returns from House Democrats [[2]](https://www.cbsnews.com/news/donald-trump-tax-returns-supreme-court-request-to-shield-from-house-committee). With all this in mind, we seek to address issues related to wealth distribution and taxed income by state and nationally.
 
 #### Direct and Indirect Stakeholders
 **Policymakers** are direct stakeholders of the data we use and the results and visualizations we produce from it, as they may use this information to guide decisions related to income tax legislation at the federal and state level. Our data may prove useful to policymakers attempting to set state or federal tax brackets and tax rates for future years.
@@ -109,9 +111,11 @@ Taxes in the U.S. are an issue as old as the country itself. They exist on the n
 
 #### Human Values
 Values: Equity, Justice
-One important value concerning this project is equity. Taxes vary between individuals depending on the tax bracket they belong to, for example, which directly links the issue of taxes to the notion of equity. Below is a figure from Statistica describing the wealth distribution over the years between four different categories of earners.
+One important value concerning this project is equity. Taxes vary between individuals depending on the tax bracket they belong to, for example, which directly links the issue of taxes to the notion of equity. Below is a figure from Statistica describing the wealth distribution over the years between four different categories of earners [[3]](https://www.statista.com/statistics/299460/distribution-of-wealth-in-the-united-states/).
 
-The figure shows an alarming disparity between earners. In general, the top ten percent of earners in the U.S. hold the majority of the country's net wealth. So, we hope to narrow down areas facing the most financial hardship in order to provide them with equitable solutions. Another important value at stake here is justice, which is closely related to equity. In addition to providing equitable solutions, we hope that this project will help identify systemic causes for inequity in the U.S. and propose ways to fix them in order to provide long-term, equitable access to resources for future generations.
+![This is the data visualization for the distribution of net wealth in the U.S. from 1990-2022](images/netwealth.png)
+
+The figure shows an alarming disparity between earners. In general, the top ten percent of earners in the U.S. hold the majority of the country’s net wealth. So, we hope to narrow down areas facing the most financial hardship in order to provide them with equitable solutions. Another important value at stake here is justice, which is closely related to equity. In addition to providing equitable solutions, we hope that this project will help identify systemic causes for inequity in the U.S. and propose ways to fix them in order to provide long-term, equitable access to resources for future generations.
 
 #### Potential Benefits and Harms
 The results of this project have the potential to benefit the bottom fifty percent of earners. These are the people who suffer the most from the wealth gap and are most likely to require financial assistance. By narrowing down the locations of this group, we can imagine how and where to allocate additional resources in the pursuit of a more equitable society. On the other hand, this project has the potential to harm the top ten percent of earners: those who benefit from the wealth gap. Ensuring that this group pays their fair share of taxes can be seen as a harm because it shifts a proportional amount of the tax burden onto them.
@@ -144,6 +148,8 @@ There is a file for each state, but the aggregated dataset already combined each
 | ...  | ...              | ... |  ...
 | Aggregate Dataset (19zpallagi)  | 33,231              | 5 (one per tax bracket group)|  152
 
+Here is the citation for the data: (“Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi.)
+
 The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
 
 The data is validated through governmental quality control. The IRS is very well documented and ensures information is correctly input onto the forms in order to reduce tax fraud. As the IRS performs lots of data validation, the data should be accurate. The data was obtained from the website Data.gov, which is an official government website that houses their open data. There are many datasets on this website that are free to use for anyone.
@@ -169,25 +175,120 @@ findings, we have been able to identify that the highest amount of tax collected
 from Americans based on their zip codes, Manhattan, New York has the highest amount 
 of taxes collected from them. This is due to the state mainly enforcing further 
 taxation to its people like state tax and federal tax on top of the original income 
-tax. Secondly, we wanted to investigate the question:\"Does wealth distribution change based 
+tax.
+
+Secondly, we wanted to investigate the question: \"Does wealth distribution change based 
 on tax laws in different states?\" Our assumption was that higher earners are attracted
 to states with low income tax rates. While our data does not allow us identify individual
 high earners, we can still say something about the states and counties these earners reside
 in. Across all states, there are always one or several counties that have the greatest total
 income by far. We found that these are typically urban counties, containing cities such as Los
-Angeles, New York, Seattle, etc.. In fact, we found that Los Angeles County and New York County
+Angeles, New York, Seattle, etc. In fact, we found that Los Angeles County and New York County
 had the highest total income of all counties, yet California and New York had some of the 
 highest income tax rates.
 
+The third question was: \"Are taxes paid fairly or is the tax 
+system abused by high earners?\" Based on our analysis, we can confidently say no, taxes are not paid fairly.
+Both the side-by-side bar plot and scatter plot show that there are many instances where low
+earners pay an equal or greater share of their income to taxes compared to high earners. This
+pattern is especially prevelant in the Southern region of the U.S.
+
+The fourth question
+we endeavored to answer was: \"Are tax breaks and benefits to the working class enough?\"
+From our findings, we conclude that they are not enough. The majority of U.S. tax returns were filed with
+income under $25,000, the lowest tax bracket, highlighting the number of low earners.
+Assitionally, the adjusted gross income of bracket 2 was greater than that of bracket 3 
+and bracket 4, suggesting that the middle class is, indeed, shrinking.
+
 ### Discussion
-We managed to notice that taxation is not equally split and equally collected among the American people though they all live in the same country. With inflation at an all time high,
-and the middle class barely making ends meet, we have to acknowledge that the tax system benefits the rich/wealthy and not the surviving day to day Americans who have to make sure they have a roof over their heads. Imagine making barely 18 hr while being forced to pay 3 forms of taxations why these billion dollar corporations fake write offs and \"Helping the community by building churches or homeless shelters\"  just to pay little to nothing in taxes. That is what I call being harsh and inconsiderate to your own people.
+Economic inequality in the United States is a pervasive issue that affects 
+millions of Americans. This inequality is largely the result of systemic factors 
+such as the unequal distribution of wealth and opportunities. For example, our 
+analysis shows that this inequality manifests through unequal distribution of income, 
+with the top earners in this country taking home a disproportionate share of the 
+nation's total income.
+
+The U.S. tax system is a key, contributing factor to economic inequality. The nation's
+tax system is progressive in the sense that those 
+who earn more are taxed at a higher rate. However, as our findings show, the reality is that the wealthy 
+are often able to use loopholes and other strategies to reduce their tax burden 
+and pay a lower effective tax rate than those who are less well off. For example, 
+they may take advantage of tax-prefered investments or deductions and exemptions that lower 
+their taxable income. They are also have greater access to tax attorneys 
+and other professionals who can help them reduce their tax liability. These are the
+factors that allow the rich to stay rich while shifting the tax burden to low
+earners.
+
+Furthermore, it is noteworthy to discuss the effect of regressive taxes as an implication 
+of economic inequality. These are taxes that are applied uniformly, 
+regardless of income, and have a greater impact on those who are less well off. 
+For example, sales taxes and property taxes are often applied regardless of a person's income or wealth.
+In general, lower-income individuals spend a larger portion of their income on necessities, 
+such as food and housing. In effect, regressive taxes are more detrimental to low earners
+than they are for wealthier individuals.
+
+Money is often equated to power. So, given the unequal distribution of wealth in 
+this country, the rich have a disproportionate amount of influence over political 
+processes. This allows them to shape policies and legislation in their favor, 
+including the tax system, further exacerbating inequality.
+
+All our findings support the argument that the current U.S. tax system is flawed
+and greatly contributes the ever-growing economic inequality in this country. To
+create a more equitable future, we must reform the tax system in a way that
+ensures the wealthy pay their fair share of dues, allocates funds towards
+equitable programs, such as healthcare and education, and provides financial
+support to those in need.
+
 
 ### Conclusion
+Overall, it is clear that the tax system in the United States plays a significant 
+role in perpetuating economic inequality. Our analysis and findings present information
+about the nation's tax system that is otherwise obscured. While the progressive tax system is 
+intended to reduce inequality by taxing the wealthy at a higher rate, the reality 
+is that the wealthy are able to use their resources to reduce their tax burden 
+and keep more of their income. Additionally, regressive taxes disproportionately 
+impact those who are less well off, further widening the gap between the rich and 
+the poor. In order to address economic inequality in the United States, it will 
+be necessary to reform the tax system in order to make it more equitable and 
+effective at reducing inequality.
+
+Additionally, the current tax system is not adequately funded to provide essential 
+services and support for those in need. This is particularly true for programs 
+such as healthcare and education, which are vital for improving social mobility 
+and reducing inequality. The tax breaks currently provided to low-income individuals
+are not sufficient at remedying inequality either. Taxes should be reinvested into
+communities that are in great need of essential institutions that wealthy communities
+take for granted. This way we may rid impoverished communities of the systemic factors
+that lead to economic inequality and help transform them in a way that affords longevity
+and economic prosperity.
+
+The implications of economic inequality in the United States in terms 
+of the tax system are significant. The current system fails to adequately 
+redistribute wealth, is riddled with loopholes and exemptions, and makes it difficult 
+for people who are less well off to even obtain essential services. Additionally, the unequal 
+distribution of wealth gives the wealthy disproportionate political power, 
+further entrenching inequality. All of these flaws and inequities are largely the
+result of systemic factors that purposefully create division in this country.
+In order to address these issues, there needs 
+to be comprehensive reform of the tax system to ensure that the rich pay their 
+fair share and that the necessary funds are available to support those in need. This
+requires a shift in our perception of wealth and may entail an entirely new, human-centered
+approach on how taxes are collected in the United States.
+
 
 ### Acknowledgements
-We acknowledge Lilia for being a great TA and helping us with our questions."
+We acknowledge Lilia for being a great TA and helping us with our questions.
 
+### References
+1. “IRS: Growing Gap between US Income Taxes Owed and Paid.” ABC News, ABC News Network, 28 Oct. 2022, https://abcnews.go.com/Business/wireStory/irs-growing-gap-us-income-taxes-owed-paid-92304350.
+
+2. Legare, Robert. “Trump Takes Fight to Shield Tax Returns from House Committee to Supreme Court.” CBS News, CBS Interactive, 31 Oct. 2022, https://www.cbsnews.com/news/donald-trump-tax-returns-supreme-court-request-to-shield-from-house-committee.
+
+3. Wealth Distribution in America 1990-2022.” Statista, 4 Oct. 2022, https://www.statista.com/statistics/299460/distribution-of-wealth-in-the-united-states/.
+
+4. “Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi."
+
+# Create markdown home page to be rendered
 home_md = 
 " 
 ### Taxes in the US: An Overview
@@ -325,10 +426,12 @@ server <- function(input, output) {
     return(pp)
   })  
   
+  # output report page
   output$report <- renderUI({
     HTML(markdown::markdownToHTML(text = report_md, fragment.only = TRUE))
   })
   
+  # output home page
   output$introduction <- renderUI({
     HTML(markdown::markdownToHTML(text = home_md, fragment.only = TRUE))
   })
