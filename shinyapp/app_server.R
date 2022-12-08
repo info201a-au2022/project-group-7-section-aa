@@ -3,6 +3,7 @@ library(tidyverse)
 library(plotly)
 library(maps)
 library(mapproj)
+library(scales)
 
 taxes <- read_csv('data/taxdata.csv')
 
@@ -158,13 +159,31 @@ A couple limitations that need to be addressed is the fact that the wealthy peop
 This is because most government workers use taxpayers money to fix for example concrete streets that have major puddle holes, pay local metro bus workers, police officers, garbage collectors, tax specialists, correctional officers, etc. Cutting down taxes means more money from government pockets to keep up things running and functioning effectively. That's why policy makers need to make a justifiable taxation that would keep both parties at an advantage to live life with ease and have America function without any complications.
 
 ### Findings
-Based on our conducted research, we wanted to answer the following once our data was collected, concluded and were presentable to answer the following research questions we first started the project with. The first question was, \"What is the distribution of income over the United States based on Zip Code and State?\". We were able to successfully look into the income distribution between the american people and their respective zip codes based on their living areas and to our findings, we have been able to identify that the highest amount of tax collected from americans based on their zip codes, Manhattan new york has the highest amount of taxes collected from them. This is due to the state mainly enforcing further taxation to its people like state tax and federal tax on top of the original income tax. 
+Based on our conducted research, we wanted to answer the following once our data 
+was collected, concluded and were presentable to answer the following research 
+questions we first started the project with. The first question was: \"What is 
+the distribution of income over the United States based on Zip Code and State?\". 
+We were able to successfully look into the income distribution between the American 
+people and their respective zip codes based on their living areas and to our 
+findings, we have been able to identify that the highest amount of tax collected 
+from Americans based on their zip codes, Manhattan, New York has the highest amount 
+of taxes collected from them. This is due to the state mainly enforcing further 
+taxation to its people like state tax and federal tax on top of the original income 
+tax. Secondly, we wanted to investigate the question:\"Does wealth distribution change based 
+on tax laws in different states?\" Our assumption was that higher earners are attracted
+to states with low income tax rates. While our data does not allow us identify individual
+high earners, we can still say something about the states and counties these earners reside
+in. Across all states, there are always one or several counties that have the greatest total
+income by far. We found that these are typically urban counties, containing cities such as Los
+Angeles, New York, Seattle, etc.. In fact, we found that Los Angeles County and New York County
+had the highest total income of all counties, yet California and New York had some of the 
+highest income tax rates.
 
 ### Discussion
 We managed to notice that taxation is not equally split and equally collected among the American people though they all live in the same country. With inflation at an all time high,
 and the middle class barely making ends meet, we have to acknowledge that the tax system benefits the rich/wealthy and not the surviving day to day Americans who have to make sure they have a roof over their heads. Imagine making barely 18 hr while being forced to pay 3 forms of taxations why these billion dollar corporations fake write offs and \"Helping the community by building churches or homeless shelters\"  just to pay little to nothing in taxes. That is what I call being harsh and inconsiderate to your own people.
 
-###Conclusion
+### Conclusion
 
 ### Acknowledgements
 We acknowledge Lilia for being a great TA and helping us with our questions."
@@ -214,8 +233,8 @@ server <- function(input, output) {
                                             color = "white",
                                             size = .1) +
       coord_map() +
-      scale_fill_continuous(low = "#132B43", high = "Red") +
-      labs(title = str_to_title(paste0(str_replace_all(input$map_val, "\\.", " "), " in ", input$map_state," by county")),
+      scale_fill_continuous(low = "#132B43", high = "Red", labels = comma) +
+      labs(title = str_to_title(paste0(str_replace_all(input$map_val, "\\.", " "), " in ", input$map_state," by county (2019)")),
            fill = str_to_title(paste0(str_replace_all(input$map_val, "\\.", " ")))) +
       blank_theme
     
@@ -257,17 +276,21 @@ server <- function(input, output) {
 ### Plot third chart
   output$chart3 <- renderPlotly({
     scatter <- scatter_df %>%
-      filter(state_name == input$plot_state)
+      filter(state_name == input$plot_state, 
+             Total.Income.Amount >= input$slider[1], 
+             Total.Income.Amount <= input$slider[2])
     
     p <- ggplot(data = scatter, mapping = aes(x = Total.Income.Amount, 
                                               y = !!as.symbol(input$plot_var), 
                                               color = Adjusted.Size.Gross.Income.Category,
                                               text = paste0("Zipcode: ", as.character(Zip.Code)))) +
       geom_point(position="jitter") +
-      labs(title = str_to_title(paste0(str_replace_all(input$plot_var, "\\.", ""), " in ", input$plot_state, "by zipcode")),
+      scale_x_continuous(labels = comma) +
+      scale_y_continuous(labels = comma) +
+      labs(title = str_to_title(paste0(str_replace_all(input$plot_var, "\\.", " "), " in ", input$plot_state, " by zipcode (2019)")),
            x = "Total Income Amount",
-           y = "",
-           color = "Tax")
+           y = str_to_title(str_replace_all(input$plot_var, "\\.", " ")),
+           color = "Tax bracket")
     
     pp <- ggplotly(p)
     return(pp)

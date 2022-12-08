@@ -83,17 +83,20 @@ chart1_main_content <- mainPanel(plotlyOutput("chart1"))
 chart1_panel <- tabPanel(
   title = "State Map",
   titlePanel("Choropleth Map of State Tax Information by County"),
-  p("Write summary paragraph. Lorem ipsum dolor 
-     sit amet, consectetur adipiscing elit, sed do 
-     eiusmod tempor incididunt ut labore et dolore 
-     magna aliqua. Ut enim ad minim veniam, quis 
-     nostrud exercitation ullamco laboris nisi ut 
-     aliquip ex ea commodo consequat. Duis aute 
-     irure dolor in reprehenderit in voluptate velit 
-     esse cillum dolore eu fugiat nulla pariatur. 
-     Excepteur sint occaecat cupidatat non proident, 
-     sunt in culpa qui officia deserunt mollit anim 
-     id est laborum."),
+  p("The visualization shown below is a choropleth map that illustrates six different 
+    pieces of tax information for U.S. states, excluding Alaska and Hawaii, at the 
+    county level. We expect counties with greater values for total income to pay more taxes, 
+    which is consistent with the values displayed from the map. However, when considering
+    whether these tax payments are fair shares, based on the amount of total income, we must
+    look at proportions. 
+    
+    From the map of Washington, we can, for example, compare Jefferson and
+    Snohomish County. The total income of Snohomish county is nearly double that of
+    Jefferson County, yet the proportions of total income that are paid to taxes are nearly
+    the same in both counties. Upon further investigation, we can see that over half of Jefferson
+    County's total income is not from wages while that for Snohomish County is around a fourth.
+    Stark contrasts in proportions, such as this, indicate potential inequality between the taxes
+    paid by high and low earners and require further analysis."),
   sidebarLayout(
     chart1_sidebar_content,
     chart1_main_content
@@ -145,6 +148,7 @@ chart2_panel <- tabPanel(
 chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "plot_state",
                                                    label = "Choose a state",
                                                    choices = list("Alabama" = "alabama",
+                                                                  "Alaska" = "alaska",
                                                                   "Arizona" = "arizona",
                                                                   "Arkansas" = "arkansas",
                                                                   "California" = "california",
@@ -153,6 +157,7 @@ chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "plot_state",
                                                                   "Delaware" = "delaware",
                                                                   "Florida" = "florida",
                                                                   "Georgia" = "georgia",
+                                                                  "Hawaii" = "hawaii",
                                                                   "Idaho" = "idaho",
                                                                   "Illinois" = "illinois",
                                                                   "Indiana" = "indiana",
@@ -200,7 +205,13 @@ chart3_sidebar_content <- sidebarPanel(selectInput(inputId = "plot_state",
                                                                   "Income not from wages" = "Income.not.from.wages.amount",
                                                                   "Proportion of income taxed" = "Proportion.of.income.taxed",
                                                                   "Proportion of taxable income" = "Proportion.of.taxable.income",
-                                                                  "Proportion of income not from wages" = "Proportion.of.income.not.from.wages")))
+                                                                  "Proportion of income not from wages" = "Proportion.of.income.not.from.wages"),
+                                                   selected = "Proportion.of.income.taxed"),
+                                       sliderInput(inputId = "slider",
+                                                   label = "Choose an income range",
+                                                   min = 0,
+                                                   max = 10000000,
+                                                   value = c(0,300000)))
 # Chart 3 main content
 chart3_main_content <- mainPanel(plotlyOutput("chart3"))
 
@@ -208,17 +219,23 @@ chart3_main_content <- mainPanel(plotlyOutput("chart3"))
 chart3_panel <- tabPanel(
   title = "Scatter Plot",
   titlePanel("Scatter Plot by Total Income"),
-  p("Write summary paragraph. Lorem ipsum dolor 
-     sit amet, consectetur adipiscing elit, sed do 
-     eiusmod tempor incididunt ut labore et dolore 
-     magna aliqua. Ut enim ad minim veniam, quis 
-     nostrud exercitation ullamco laboris nisi ut 
-     aliquip ex ea commodo consequat. Duis aute 
-     irure dolor in reprehenderit in voluptate velit 
-     esse cillum dolore eu fugiat nulla pariatur. 
-     Excepteur sint occaecat cupidatat non proident, 
-     sunt in culpa qui officia deserunt mollit anim 
-     id est laborum."),
+  p("The visualization shown below compares six different pieces of tax data 
+    collected by zipcode for a chosen state against total income. Each point
+    represents a particular zipcode, and the points are colored based on the
+    tax bracket for which the data was collected. Iterating on the previous
+    visualizations, this scatterplot makes the inequity in tax burden between
+    high and low earners visually apparent. Looking at Washington, for example,
+    we notice that the proportion of income that is paid to taxes, between tax 
+    brackets, is not consistent with what we expect them to be. Higher earners
+    are expected to pay a greater share of their income. However, the plot shows
+    that there is significant overlap between the different tax brackets. This
+    overlap in the proportion of income paid to taxes becomes much more
+    apparent when looking at the plots for southern states such as Texas, Alabama,
+    or Louisiana. To identify a potential cause for this overlap, we can look at
+    the proportion of income not from wages to realize that high earners typically
+    have the greatest proportions. This is income that is not necessarily taxable
+    and could possibly explain why we see so much overlap in the proportion of 
+    income paid to taxes across tax brackets."),
   sidebarLayout(
     chart3_sidebar_content,
     chart3_main_content
