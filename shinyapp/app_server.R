@@ -337,7 +337,15 @@ We want to know:
 In order to answer our questions, we will draw on various parameters such as income distribution by zip code,
 income that is taxed less or sometimes not at all (deductions, capital gains), and tax burdens on different tax brackets.
 We plan to analyze this information by state so that we may compare different areas in the US. This will help us understand
-where local legislature is working, and where it isn't."
+where local legislature is working, and where it isn't.
+
+We find that high earners escape tax via deductions
+and capital gains, which are taxed less than ordinary income. Low earners that do not have the means to earn income this way are 
+working **paycheck-to-paycheck** and are faced with the **brunt of the tax burden**. From our analysis, we found that Southern states burden 
+the lower class more than Northern states. Tax laws in the US do not benefit the working class,
+but rather help the **wealthy stay on top**. This may be due to factors such as corporate lobbying and other laws
+that help wealthy people influence politics. We hope this analysis may **highlight financial injustice in America** and 
+encourage legislative action."
 summary_md <- 
   
 "### What conclusions can be drawn from this analysis? 

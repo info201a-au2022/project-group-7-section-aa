@@ -115,8 +115,13 @@ chart2_sidebar_content <- sidebarPanel(
               selected = "Washington",
               choice = state.name))
 # Chart 2 main content
-chart2_main_content <- mainPanel(plotlyOutput("chart2"),
-                                 p("This visualization looks at the amount of tax that 
+chart2_main_content <- mainPanel(plotlyOutput("chart2"))
+
+# Chart 2 page
+chart2_panel <- tabPanel(
+  title = "Taxes by Bracket",
+  titlePanel("Assessment of Taxes by Bracket in US States"),
+  p("This visualization looks at the amount of tax that 
                                    the IRS charges to different tax brackets in 
                                    different states. We can easily compare any two
                                    states with this graph. 
@@ -139,12 +144,7 @@ chart2_main_content <- mainPanel(plotlyOutput("chart2"),
                                    it may be very difficult to live at or around the poverty line in these states. 
                                    In addition to other hardship, almost 20% of one's paycheck will be taken to tax. In the PNW, 
                                    however, this burden is only around 12-13%. This makes it easier to keep income and start
-                                   to move out of the grasps of poverty."))
-
-# Chart 2 page
-chart2_panel <- tabPanel(
-  title = "Taxes by Bracket",
-  titlePanel("Assessment of Taxes by Bracket in US States"),
+                                   to move out of the grasps of poverty."),
   sidebarLayout(
     chart2_sidebar_content,
     chart2_main_content
