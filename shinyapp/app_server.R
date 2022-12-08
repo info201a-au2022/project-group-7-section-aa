@@ -193,17 +193,15 @@ A couple limitations that need to be addressed is the fact that the wealthy peop
 This is because most government workers use taxpayers money to fix for example concrete streets that have major puddle holes, pay local metro bus workers, police officers, garbage collectors, tax specialists, correctional officers, etc. Cutting down taxes means more money from government pockets to keep up things running and functioning effectively. That's why policy makers need to make a justifiable taxation that would keep both parties at an advantage to live life with ease and have America function without any complications.
 
 ### Findings
-Based on our conducted research, we wanted to answer the following once our data 
-was collected, concluded and were presentable to answer the following research 
-questions we first started the project with. The first question was: \"What is 
+There were four key research questions we wanted to answer through our analysis of
+the IRS tax data set from 2019. The first question was: \"What is 
 the distribution of income over the United States based on Zip Code and State?\". 
-We were able to successfully look into the income distribution between the American 
-people and their respective zip codes based on their living areas and to our 
-findings, we have been able to identify that the highest amount of tax collected 
-from Americans based on their zip codes, Manhattan, New York has the highest amount 
-of taxes collected from them. This is due to the state mainly enforcing further 
-taxation to its people like state tax and federal tax on top of the original income 
-tax.
+We were able to successfully look into the income distribution across states and
+zip codes. Based on the zip code data, we were able to identify that the location 
+from which the highest amount of taxes were collected from Americans in 2019, 
+was Manhattan, New York. Through further research, we determined that this was 
+due to the state having one of the highest income tax rates in addition to federal
+taxes. From here, we analyzed the distribution of wealth between particular states.
 
 Secondly, we wanted to investigate the question: \"Does wealth distribution change based 
 on tax laws in different states?\" Our assumption was that higher earners are attracted
