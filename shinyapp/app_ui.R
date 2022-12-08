@@ -247,23 +247,9 @@ summary_panel <- tabPanel(
   title = "Summary",
   titlePanel("Our Findings"),
   fluidPage(
-    p("We find that high earners are using the capital gains 
-      tax laws to pay less tax on their income. This law is much more exploitable for high earners
-      who have the capital to fund portfolio investments. This is one of the most significant ways 
-      that wealthy individuals continue to become wealthier. This is an extremely relevant topic right now, 
-      as Joe Biden has proposed to raise the maximum capital gains tax from 20% to 39.6%. Therefore, for the highest bracket, 
-      capital gains will be effectively taxed as ordinary income. This will decrease the efficacy of 
-      this tax evasion strategy and promote equal paying of taxes."),
-    p("We also conclude that the tax system in the US does not provide enough benefits to the lower
-      class and furthers the cycle of poverty. The majority of the US is filing with income under $25,000, 
-      highlighting the high number of low earners in the US. Next, we look at total adjusted gross income. 
-      This is a metric that the IRS uses to calculate taxes by making slight adjustments to the total gross income. 
-      Interestingly, the AGI from tax bracket 2 is more than 3 and 4, suggesting that the middle class is shrinking. 
-      Unsurpsiringly, high earners in tax bracket 5 make up 37.09% of the total income in the US, while the lowest 
-      earners in bracket 1 (which make up almost 6x more returns) only account for 5.19% of income. 
-      Another statistic we can look at is tax payments. High earners (bracket 5) are paying upwards of 52.83% of total US taxes, 
-      almost 1 trillion US dollars. While the lowest earners only comprise 5.28% of total tax payments, they are still burdened 
-      with a 15.79% effective tax rate.")
+    p(
+      uiOutput('summary')
+    )
   )
 )
 

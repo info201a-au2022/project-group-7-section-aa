@@ -192,9 +192,8 @@ home_md =
 " 
 ### Taxes in the US: An Overview
 
->Men lie, women lie, but numbers don't. 
+> Paying tax is a part of everyone's lives. But is the system fair to everyone?
 
-Paying tax is a part of everyone's lives.
 To understand the nuances of the tax system, we analyzed a dataset from the IRS on 
 Tax Returns in 2019. A tax return is a form that contains information on income, expenses,
 and taxes liability. This must be annually filed by every income earner or couple or household in the US.
@@ -204,7 +203,37 @@ In the US in 2019, the total amount of taxes collected was **$1,871,313,069,000 
 We want to know:
 - What is the distribution of income over the United States based on Zip Code and State?
 - Are taxes paid fairly or is the tax system abused by high earners?
-- Are tax breaks and benefits to the working class enough?"
+- Are tax breaks and benefits to the working class enough?
+
+In order to answer our questions, we will draw on various parameters such as income distribution by zip code,
+income that is taxed less or sometimes not at all (deductions, capital gains), and tax burdens on different tax brackets.
+We plan to analyze this information by state so that we may compare different areas in the US. This will help us understand
+where local legislature is working, and where it isn't."
+summary_md <- 
+  
+"### What conclusions can be drawn from this analysis? 
+  
+We find that high earners earn a significant portion of their income from means other than salary (real estate, stock market, other
+assets). This income is often taxed at a lower rate than their wage, **the capital gains tax rate**. High earners are using the capital gains 
+tax laws to pay less tax on their income. This law is much more exploitable for high earners
+who have the capital to fund portfolio investments. This is one of the most significant ways 
+that **wealthy individuals continue to become wealthier**. This is an extremely relevant topic right now, 
+as _Joe Biden has proposed to raise the maximum capital gains tax from 20% to 39.6%_. Therefore, for the highest bracket, 
+capital gains will be effectively taxed as ordinary income. This will decrease the efficacy of 
+this tax evasion strategy and promote equal paying of taxes.
+
+We also conclude that **the tax system in the US does not provide enough benefits to the lower
+class**, furthering the cycle of poverty. The largest tax bracket by number of returns is income under $25,000, 
+highlighting the ever-increasing number of low earners in the US. Why are so many people stuck living paycheck-to-paycheck,
+just above or falling below the poverty line? This is because, on average, these earners pay *15.79% of their income in taxes*. 
+This number is lower for the middle three brackets. This rate is the highest for high earners, which is most fair, 
+but should be lowest for the bottom bracket. The fact that it is not shows injustice in the US tax system.
+
+Interestingly, the total Adjusted Gross Income from tax bracket 2 is more than 3 and 4, suggesting that the middle class is shrinking. 
+Unsurprisingly, high earners in tax bracket 5 make up 37.09% of the total income in the US, while the lowest 
+earners in bracket 1 (which make up almost 6x more returns) only account for 5.19% of income. 
+High earners (bracket 5) are paying upwards of 52.83% of total US taxes, 
+      almost 1 trillion US dollars."
 server <- function(input, output) {
 ### Plot first chart
   output$chart1 <- renderPlotly({
@@ -302,5 +331,9 @@ server <- function(input, output) {
   
   output$introduction <- renderUI({
     HTML(markdown::markdownToHTML(text = home_md, fragment.only = TRUE))
+  })
+  
+  output$summary <- renderUI({
+    HTML(markdown::markdownToHTML(text = summary_md, fragment.only = TRUE))
   })
 }
