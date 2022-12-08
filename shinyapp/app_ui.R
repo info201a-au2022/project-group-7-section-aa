@@ -126,9 +126,7 @@ chart2_panel <- tabPanel(
                                    different states. We can easily compare any two
                                    states with this graph. 
                                    
-                                   We believe that those
-                                   in the lowest tax bracket should not be subject
-                                   to high tax rates. As tax bracket increases,
+                                   As tax bracket increases,
                                    earners should pay more percent of their income
                                    in taxes. This is a fundamental rule of tax 
                                    brackets and is the reason why federal income

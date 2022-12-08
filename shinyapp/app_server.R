@@ -143,7 +143,7 @@ One important value concerning this project is equity. Taxes vary between indivi
 
 ![This is the data visualization for the distribution of net wealth in the U.S. from 1990-2022](images/netwealth.png)
 
-The figure shows an alarming disparity between earners. In general, the top ten percent of earners in the U.S. hold the majority of the country’s net wealth. So, we hope to narrow down areas facing the most financial hardship in order to provide them with equitable solutions. Another important value at stake here is justice, which is closely related to equity. In addition to providing equitable solutions, we hope that this project will help identify systemic causes for inequity in the U.S. and propose ways to fix them in order to provide long-term, equitable access to resources for future generations.
+The figure shows an alarming disparity between earners. In general, the top ten percent of earners in the U.S. hold the majority of the country's net wealth. So, we hope to narrow down areas facing the most financial hardship in order to provide them with equitable solutions. Another important value at stake here is justice, which is closely related to equity. In addition to providing equitable solutions, we hope that this project will help identify systemic causes for inequity in the U.S. and propose ways to fix them in order to provide long-term, equitable access to resources for future generations.
 
 #### Potential Benefits and Harms
 The results of this project have the potential to benefit the bottom fifty percent of earners. These are the people who suffer the most from the wealth gap and are most likely to require financial assistance. By narrowing down the locations of this group, we can imagine how and where to allocate additional resources in the pursuit of a more equitable society. On the other hand, this project has the potential to harm the top ten percent of earners: those who benefit from the wealth gap. Ensuring that this group pays their fair share of taxes can be seen as a harm because it shifts a proportional amount of the tax burden onto them.
@@ -176,7 +176,7 @@ There is a file for each state, but the aggregated dataset already combined each
 | ...  | ...              | ... |  ...
 | Aggregate Dataset (19zpallagi)  | 33,231              | 5 (one per tax bracket group)|  152
 
-Here is the citation for the data: (“Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi.)
+Here is the citation for the data: (Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi.)
 
 The data was collected by the IRS in 2019. It was collected from tax return forms, which is an integral part of data that the IRS uses to make sure everyone is paying the right amount in taxes. The data collection was funded using government money. The IRS has $13 billion in funding from the government, some of which was used for this purpose. There is no direct beneficiary, as the government is non-profit and simply helps maintain the law as it is written. However, as the IRS promotes fairness in the law, the people are the beneficiaries of the work they do to uphold the tax code.
 
@@ -306,13 +306,13 @@ approach on how taxes are collected in the United States.
 We acknowledge Lilia for being a great TA and helping us with our questions.
 
 ### References
-1. “IRS: Growing Gap between US Income Taxes Owed and Paid.” ABC News, ABC News Network, 28 Oct. 2022, https://abcnews.go.com/Business/wireStory/irs-growing-gap-us-income-taxes-owed-paid-92304350.
+1. IRS: Growing Gap between US Income Taxes Owed and Paid. ABC News, ABC News Network, 28 Oct. 2022, https://abcnews.go.com/Business/wireStory/irs-growing-gap-us-income-taxes-owed-paid-92304350.
 
-2. Legare, Robert. “Trump Takes Fight to Shield Tax Returns from House Committee to Supreme Court.” CBS News, CBS Interactive, 31 Oct. 2022, https://www.cbsnews.com/news/donald-trump-tax-returns-supreme-court-request-to-shield-from-house-committee.
+2. Legare, Robert. Trump Takes Fight to Shield Tax Returns from House Committee to Supreme Court. CBS News, CBS Interactive, 31 Oct. 2022, https://www.cbsnews.com/news/donald-trump-tax-returns-supreme-court-request-to-shield-from-house-committee.
 
-3. Wealth Distribution in America 1990-2022.” Statista, 4 Oct. 2022, https://www.statista.com/statistics/299460/distribution-of-wealth-in-the-united-states/.
+3. Wealth Distribution in America 1990-2022. Statista, 4 Oct. 2022, https://www.statista.com/statistics/299460/distribution-of-wealth-in-the-united-states/.
 
-4. “Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI).” Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi."
+4. Soi Tax Stats - Individual Income Tax Statistics - 2019 ZIP Code Data (SOI). Internal Revenue Service, US Government, 7 Sept. 2022, https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2019-zip-code-data-soi."
 
 # Create markdown home page to be rendered
 home_md = 
@@ -360,7 +360,7 @@ this tax evasion strategy and promote equal paying of taxes.
 We also conclude that **the tax system in the US does not provide enough benefits to the lower
 class**, furthering the cycle of poverty. An interesting results from our analysis is that some states 
 provide more benefits to the lower class than others. Southern states typically have a higher burden on the working class
-while Northern states do not show this as much.. This might be due to economically conservative policies that allow for lower taxes and more tax evasion, but end up shifting 
+while Northern states do not show this as much. This might be due to economically conservative policies that allow for lower taxes and more tax evasion, but end up shifting 
 the burden down to the low earners. Summary statistics help us look at this problem at a larger scale, across the whole US. 
 
 The largest tax bracket by number of returns is income under $25,000 - **49.24 million returns** - 
